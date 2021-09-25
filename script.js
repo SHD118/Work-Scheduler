@@ -88,4 +88,41 @@ function createTimeBlocks() {
     leadP.textContent = momentTime
   
     
+}
+
+
+function compareTime() {
+    var dt = moment().format("hh:mm:ss a");
+    $('#test').text(dt)
+    
+    $(".col-2").each(function (index, element) {
+  
+      
+      var timeblock = $(element).text().trim()
+      var timeblockTime = Number(timeblock.split(":")[0])
+     
+    
+      var currentTime = moment().hours()
+  
+    
+      if (timeblockTime <= 5) {
+        timeblockTime += 12;
+      }
+  
+      if (currentTime > timeblockTime) {
+  
+        $(element).addClass("past")
+      }
+      else if (currentTime < timeblockTime) {
+  
+        $(element).addClass("future")
+      }
+      else {
+  
+        $(element).addClass("present")
+      }
+  
+    })
+    return;
   }
+  
