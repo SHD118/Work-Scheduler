@@ -126,3 +126,22 @@ function compareTime() {
     return;
   }
   
+var input9 = document.getElementById("input-9")
+var input10 = document.getElementById("input-10")
+var input11 = document.getElementById("input-11")
+var input12 = document.getElementById("input-12")
+var input1 = document.getElementById("input-1")
+var input2 = document.getElementById("input-2")
+var input3 = document.getElementById("input-3")
+var input4 = document.getElementById("input-4")
+var input5 = document.getElementById("input-5")
+
+var button9 = document.getElementById("button-9");
+var button10 = document.getElementById("button-10");
+var button11 = document.getElementById("button-11");
+var button12 = document.getElementById("button-12");
+var button1 = document.getElementById("button-1");
+var button2 = document.getElementById("button-2");
+var button3 = document.getElementById("button-3");
+var button4 = document.getElementById("button-4");
+var button5 = document.getElementById("button-5");
