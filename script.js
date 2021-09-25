@@ -15,8 +15,64 @@
 //after end of day refresh local storage
 
 var timeBlocks = document.getElementById("time_blocks")
-var startButton = document.getElementById("start")
+
 var leadP = document.getElementById("currentDay")
 var calendarDiv = document.getElementById("#calendar")
+var rowTemp;
 
 
+
+//Create timeblocks
+//Am
+function createTimeBlocks() {
+    for (let i = 9; i <= 12; i++) {
+        var elementAM = $(
+        
+            `<div class="row-${i}" >
+            <div class="col-2">
+            ${i}:00:00 am
+            </div>
+            <div class="col">
+            <div class="input-group mb-3" >
+            <input type="text" id = "input-${i}" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+           <div class="input-group-append">
+             <button class="btn btn-outline-secondary" id ="button-${i}" type="button">Button</button>
+           </div>
+         </div>
+            </div>
+          </div>
+           
+  </div>`)
+     
+      elementAM.appendTo('#calendar')  
+      
+    }
+  
+    //end of AM
+    //PM
+    for (let i = 1; i <= 5; i++) {
+        var elementPM = $(
+        
+            `
+            <div class="row-${i}">
+            <div class="col-2">
+            ${i}:00:00 pm
+            </div>
+            <div class="col">
+            <div class="input-group mb-3" >
+            <input type="text" id = "input-${i}" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+           <div class="input-group-append">
+             <button class="btn btn-outline-secondary" id ="button-${i}" type="button">Button</button>
+           </div>
+         </div>
+            </div>
+          </div>
+           
+  </div>`)
+        elementPM.appendTo('#calendar')
+        
+        
+    }
+  
+  }//End of PM
+  
