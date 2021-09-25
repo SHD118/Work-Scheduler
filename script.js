@@ -194,4 +194,21 @@ button9.addEventListener("click", function () {
   
     localStoring("input-5", input5.value);
    
-    })
+  })
+    
+  function localStoring(key, value) {
+    localStorage.setItem(key, value)
+    // setValues()
+  
+  }
+  // function setValues() {
+  console.log(moment().hour())
+    input9.value = localStorage.getItem("input-9")
+    input10.value = localStorage.getItem("input-10")
+    input11.value = localStorage.getItem("input-11")
+    input12.value = localStorage.getItem("input-12")
+    input1.value = localStorage.getItem("input-1")
+    input2.value = localStorage.getItem("input-2")
+    input3.value = localStorage.getItem("input-3")
+    input4.value = localStorage.getItem("input-4")
+    input5.value = localStorage.getItem("input-5")
