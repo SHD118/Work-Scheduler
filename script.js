@@ -1,27 +1,20 @@
 
-
+//Querying the html elements for later proccessing
 var timeBlocks = document.getElementById("time_blocks")
 var startButton = document.getElementById("start")
 var leadP = document.getElementById("currentDay")
 var calendarDiv = document.getElementById("#calendar")
-// var reloadButton = document.getElementById("#button-reload")
 
 
+//Inititalize the most crucial code for page to render
   createTimeBlocks()
   getTime()
 
-var momentGlobal = moment();
-var currenthour = momentGlobal.format("H");
+// var momentGlobal = moment();
+// var currenthour = momentGlobal.format("H");
 
 
-
-// reloadButton.addEventListener("click", function () {
-
-//     localStoring("input-5", input5.value);
-   
-//     })
-
-//Create timeblocks
+//Create function that creates the input form/button using bootstrap by using a loop for 9-11 and 1-5 however 12pm i added it manually
 //Am
 function createTimeBlocks() {
   for (let i = 9; i <= 11; i++) {
@@ -98,29 +91,32 @@ function createTimeBlocks() {
 
 }//End of PM
 
-
 //end of timeblocks
-//Create function to get the current moment time and display it in header
+
+
+//Create function to get the current moment time and display it in header 
 function getTime() {
   var leadTemp = document.createElement("p")
   leadTemp.textContent = moment().format("MMM DD, YYYY [at] hh:mm:ss a");
   leadP.appendChild(leadTemp)
   compareTime()
 }
-//call back function so the time increments each second
+//This function will be called every second and update the leadP text
 function timerIncrement() {
   var momentTime = moment().format("MMM DD, YYYY [at] hh:mm:ss a");
   leadP.textContent = momentTime
 
   
 }
+//call back function to call timeIncrement function every second
 setInterval(timerIncrement, 1000);
 
 
-
+//compareTime will compare the current time and compare it to the timeblock time and add the correct CSS class
+//Depending if timeblock is greater/less or equal to the timeblock hour it will display the input red, green or gray
 function compareTime() {
   var dt = moment().format("hh:mm:ss a");
-//   $('#test').text(dt)
+
   
   $(".col-2").each(function (index, element) {
 
@@ -154,7 +150,7 @@ function compareTime() {
 }
 
 
-
+//Query the input and buttons from the html for later processing
 var input9 = document.getElementById("input-9")
 var input10 = document.getElementById("input-10")
 var input11 = document.getElementById("input-11")
@@ -175,6 +171,7 @@ var button3 = document.getElementById("button-3");
 var button4 = document.getElementById("button-4");
 var button5 = document.getElementById("button-5");
 
+//Created a click event listener for each button for storing the input string to local storage by passing the data to localStoring function
 
 button9.addEventListener("click", function () {
   localStoring("input-9", input9.value);
@@ -226,12 +223,14 @@ button5.addEventListener("click", function () {
  
   })
 
+
+ //Stored input number and value into local storage depening on button press 
 function localStoring(key, value) {
 localStorage.setItem(key, value)
 
 }
 
-// console.log(moment().hour())
+//retrung all local storage to the corresponding input fields
   input9.value = localStorage.getItem("input-9")
   input10.value = localStorage.getItem("input-10")
   input11.value = localStorage.getItem("input-11")
