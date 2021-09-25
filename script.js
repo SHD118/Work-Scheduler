@@ -145,3 +145,53 @@ var button2 = document.getElementById("button-2");
 var button3 = document.getElementById("button-3");
 var button4 = document.getElementById("button-4");
 var button5 = document.getElementById("button-5");
+
+button9.addEventListener("click", function () {
+    localStoring("input-9", input9.value);
+  
+  })
+  
+  button10.addEventListener("click", function () {
+    localStoring("input-10", input10.value);
+  
+  })
+    
+  
+  button11.addEventListener("click", function () {
+    localStoring("input-11", input11.value);
+  
+  })
+  
+  button12.addEventListener("click", function () {
+    localStoring("input-12", input12.value);
+  
+  })
+  
+  button1.addEventListener("click", function () {
+    localStoring("input-1", input1.value);
+  
+  })
+  
+  button2.addEventListener("click", function () {
+    localStoring("input-2", input2.value);
+  
+    })
+  
+  button3.addEventListener("click", function () {
+    localStoring("input-3", input3.value);
+  
+    })
+  
+  
+  button4.addEventListener("click", function () {
+    localStoring("input-4", input4.value);
+  
+  })
+    
+  
+  
+  button5.addEventListener("click", function () {
+  
+    localStoring("input-5", input5.value);
+   
+    })
