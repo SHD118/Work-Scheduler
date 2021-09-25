@@ -75,4 +75,17 @@ function createTimeBlocks() {
     }
   
   }//End of PM
+  //end of timeblocks
+  function getTime() {
+    var leadTemp = document.createElement("p")
+    leadTemp.textContent = moment().format("MMM DD, YYYY [at] hh:mm:ss a");
+    leadP.appendChild(leadTemp)
+    compareTime()
+  }
+  //call back function so the time increments each second
+  function timerIncrement() {
+    var momentTime = moment().format("MMM DD, YYYY [at] hh:mm:ss a");
+    leadP.textContent = momentTime
   
+    
+  }
