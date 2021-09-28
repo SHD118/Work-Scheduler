@@ -42,10 +42,10 @@ Cell: 908-883-0191
 ```
 
 ## Credits_and_References
-https://momentjs.com/docs/
-https://www.w3schools.com/jquERy/default.asp
-https://getbootstrap.com/docs/5.1/components/buttons/
-https://getbootstrap.com/docs/5.1/forms/input-group/
+* https://momentjs.com/docs/
+* https://www.w3schools.com/jquERy/default.asp
+* https://getbootstrap.com/docs/5.1/components/buttons/
+* https://getbootstrap.com/docs/5.1/forms/input-group/
 
 ## License
 
