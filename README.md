@@ -52,5 +52,5 @@ This project is free use
 
 ## Links
 https://shd118.github.io/Work-Scheduler/
-
+https://github.com/SHD118/Work-Scheduler
 
