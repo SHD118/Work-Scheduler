@@ -1,6 +1,4 @@
 # Work-Scheduler
-
-# Coding Challenging Quiz
 Created by Siddharth Desai
 
 ## Description
