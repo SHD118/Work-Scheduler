@@ -26,7 +26,7 @@ This project helped continue my knowledge in dynamically creating html/css eleme
 
 <br/>
 
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/img/Coding_Quiz_vid.gif)
+![A user clicks on slots on the color-coded calendar and edits the events.](/img/Work Day Schedul.gif)
 
 
 
