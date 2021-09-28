@@ -4,23 +4,25 @@ var timeBlocks = document.getElementById("time_blocks")
 var startButton = document.getElementById("start")
 var leadP = document.getElementById("currentDay")
 var calendarDiv = document.getElementById("#calendar")
+var btnClear = document.getElementById("clear");
 
 
 //Inititalize the most crucial code for page to render
-  createTimeBlocks()
-  getTime()
-
-// var momentGlobal = moment();
-// var currenthour = momentGlobal.format("H");
+createTimeBlocks()
+getTime()
+btnClear.addEventListener("click", function () {
+  localStorage.clear()
+  location.reload();
+})
 
 
 //Create function that creates the input form/button using bootstrap by using a loop for 9-11 and 1-5 however 12pm i added it manually
 //Am
 function createTimeBlocks() {
   for (let i = 9; i <= 11; i++) {
-      var elementAM = $(
-      
-          `<div class="row-${i}" >
+    var elementAM = $(
+
+      `<div class="row-${i}" >
           <div class="col-2">
           ${i}:00:00 am
           </div>
@@ -28,21 +30,21 @@ function createTimeBlocks() {
           <div class="input-group mb-3" >
           <input type="text" id = "input-${i}" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
          <div class="input-group-append">
-           <button class="btn btn-outline-secondary" class="saveBtn" id ="button-${i}" type="button">Button</button>
+           <button class="btn btn-outline-secondary saveBtn" id ="button-${i}" type="button">Save</button>
          </div>
        </div>
           </div>
         </div>
          
 </div>`)
-   
-    elementAM.appendTo('#calendar')  
-    
-    }
-    
-    var element12 = $(
-      
-        `<div class="row-12" >
+
+    elementAM.appendTo('#calendar')
+
+  }
+
+  var element12 = $(
+
+    `<div class="row-12" >
         <div class="col-2">
         12:00:00 pm
         </div>
@@ -50,25 +52,25 @@ function createTimeBlocks() {
         <div class="input-group mb-3" >
         <input type="text" id = "input-12" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
        <div class="input-group-append">
-         <button class="btn btn-outline-secondary" class="saveBtn" id ="button-12" type="button">Button</button>
+         <button class="btn btn-outline-secondary saveBtn" id ="button-12" type="button">Save</button>
        </div>
      </div>
         </div>
       </div>
        
 </div>`)
- 
-  element12.appendTo('#calendar')  
+
+  element12.appendTo('#calendar')
 
 
-    
+
 
   //end of AM
   //PM
   for (let i = 1; i <= 5; i++) {
-      var elementPM = $(
-      
-          `
+    var elementPM = $(
+
+      `
           <div class="row-${i}">
           <div class="col-2">
           ${i}:00:00 pm
@@ -77,16 +79,17 @@ function createTimeBlocks() {
           <div class="input-group mb-3" >
           <input type="text" id = "input-${i}" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
          <div class="input-group-append">
-           <button class="btn btn-outline-secondary" id ="button-${i}" type="button">Button</button>
+           <button class="btn btn-outline-secondary saveBtn" id ="button-${i}" type="button">Save</button>
+           
          </div>
        </div>
           </div>
         </div>
          
 </div>`)
-      elementPM.appendTo('#calendar')
-      
-      
+    elementPM.appendTo('#calendar')
+
+
   }
 
 }//End of PM
@@ -106,7 +109,7 @@ function timerIncrement() {
   var momentTime = moment().format("MMM DD, YYYY [at] hh:mm:ss a");
   leadP.textContent = momentTime
 
-  
+
 }
 //call back function to call timeIncrement function every second
 setInterval(timerIncrement, 1000);
@@ -117,17 +120,17 @@ setInterval(timerIncrement, 1000);
 function compareTime() {
   var dt = moment().format("hh:mm:ss a");
 
-  
+
   $(".col-2").each(function (index, element) {
 
-    
+
     var timeblock = $(element).text().trim()
     var timeblockTime = Number(timeblock.split(":")[0])
-   
-  
+
+
     var currentTime = moment().hours()
 
-  
+
     if (timeblockTime <= 5) {
       timeblockTime += 12;
     }
@@ -182,7 +185,7 @@ button10.addEventListener("click", function () {
   localStoring("input-10", input10.value);
 
 })
-  
+
 
 button11.addEventListener("click", function () {
   localStoring("input-11", input11.value);
@@ -202,42 +205,42 @@ button1.addEventListener("click", function () {
 button2.addEventListener("click", function () {
   localStoring("input-2", input2.value);
 
-  })
+})
 
 button3.addEventListener("click", function () {
   localStoring("input-3", input3.value);
 
-  })
+})
 
 
 button4.addEventListener("click", function () {
   localStoring("input-4", input4.value);
 
 })
-  
+
 
 
 button5.addEventListener("click", function () {
 
   localStoring("input-5", input5.value);
- 
-  })
+
+})
 
 
- //Stored input number and value into local storage depening on button press 
+//Stored input number and value into local storage depening on button press 
 function localStoring(key, value) {
-localStorage.setItem(key, value)
+  localStorage.setItem(key, value)
 
 }
 
 //retrung all local storage to the corresponding input fields
-  input9.value = localStorage.getItem("input-9")
-  input10.value = localStorage.getItem("input-10")
-  input11.value = localStorage.getItem("input-11")
-  input12.value = localStorage.getItem("input-12")
-  input1.value = localStorage.getItem("input-1")
-  input2.value = localStorage.getItem("input-2")
-  input3.value = localStorage.getItem("input-3")
-  input4.value = localStorage.getItem("input-4")
-  input5.value = localStorage.getItem("input-5")
+input9.value = localStorage.getItem("input-9")
+input10.value = localStorage.getItem("input-10")
+input11.value = localStorage.getItem("input-11")
+input12.value = localStorage.getItem("input-12")
+input1.value = localStorage.getItem("input-1")
+input2.value = localStorage.getItem("input-2")
+input3.value = localStorage.getItem("input-3")
+input4.value = localStorage.getItem("input-4")
+input5.value = localStorage.getItem("input-5")
 
